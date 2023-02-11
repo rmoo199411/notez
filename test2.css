@@ -1,0 +1,657 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+.clearfix::before,
+.clearfix::after{
+    content:'';
+    display: table;
+    clear: both;
+
+}
+
+
+
+.topbar-wrapper{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+    min-width: 1226px;
+}
+
+
+/* 設置內容區 */
+.w{
+    width: 1226px;
+    margin: 0 auto;
+    
+}
+
+
+
+.topbar a{
+    font-size: 12px;
+    color: #b0b0b0;
+
+    /* 將a從行變快元素 */
+    display: block;
+
+    /* 清除a默認底線 */
+    text-decoration: none;
+}
+
+
+
+.topbar a:hover{
+    color: #ffffff;
+}
+
+
+/* 按鈕間的小分線 */
+.line{
+    color: #424242;    
+    margin:0 10px;
+}
+
+
+
+.service , .topbar li{
+
+    /* service跟topbar中的li往左靠 */
+    float: left;
+
+}
+
+
+/* 購物車 */
+.shop-cart{
+    margin-left: 20px;
+}
+
+.shop-cart, .user-info{
+
+    /* 將購物車跟會員服務佈局往右 */
+    float: right;
+}
+
+
+.shop-cart a{
+    width: 120px;
+    position: relative;
+
+    /* 將內容置中 */
+    text-align: center;
+    background-color: #424242;
+}
+
+.shop-cart a:hover{
+    color: #ff6700;
+    background-color: #fff;
+    
+}
+
+.shop-cart i{
+
+    /* 使圖跟文字增加空間 */
+    margin-right: 3px;
+}
+
+
+.shop-cart-list{
+    background-color: rgb(255, 255, 255);
+    box-shadow:  0 0 10px rgba(0, 0, 0, .3);
+    width: 240px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s;
+    position: absolute;
+    left: -120px;
+    margin: auto;
+    /* text-align: center; */
+    line-height: 300px;
+    z-index:  999; ;
+}
+
+
+.shop-cart:hover .shop-cart-list{
+    height: 300px;
+    display: block;
+}
+
+
+/* 下載APP */
+.app{
+
+    /* 定相對定位供其他元素設定相對定位 */
+    position: relative;
+}
+
+
+
+ /* 小三角形 */
+.app::after{
+    content: '';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    /* 用border來顯示三角形，尚去除以免影響布局，除了下方其他設為透明 */
+    border:7px solid transparent;
+    border-top: none;
+    border-bottom-color: rgb(255, 255, 255);
+
+    /* app的相對定位做參考 */
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    /* 水平居中 */
+    margin: auto;
+}
+
+
+
+/* qrcode 下拉選單 */
+.app .qrcode{
+    /* display: none;    一般顯示用*/
+
+    /* 絕對定位 */
+    position: absolute;
+
+    /* 寬是46，取中間值再去依寬度調整 */
+    left: -39px;
+    width: 124px;
+    height: 0px;
+
+
+    background-color: rgb(255, 255, 255);
+
+    /* 將我們的字移入格內 */
+    line-height: 1;
+    text-align: center;
+    box-shadow:  0 0 10px rgba(0, 0, 0, .3);
+
+    overflow: hidden;
+    /* 展開 */
+    transition: height 0.2s;
+    z-index: index 999; ;
+
+}
+
+.qrcode span{
+    color: #b0b0b0;
+}    
+
+.app:hover .qrcode,
+.app:hover::after
+{
+    display: block;
+
+    /* 展勘後的高度 */
+    height: 148px;
+}
+
+.app .qrcode img{
+    width: 90px;
+    margin: 17px ;
+
+    /* 字與圖的距離 */
+    margin-bottom: 8px;
+}
+
+
+
+/* 設置header/////////////////////////////////////////// */
+.header-wrapper{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    
+    
+}
+
+
+
+.header{
+    height: 100px;
+    /* background-color: rgb(87, 81, 81); */
+    /* background-color: rgb(255, 0, 0); */
+}
+
+
+/* logo */
+.header .logo{
+    float: left;
+
+    /* 垂直置中(header寬100-logo寬55)/2 */
+    margin-top: 22.5px;
+    width: 55px;
+    height: 55px;
+
+    /* 絕對定位 */
+    position: relative;
+
+    /* 隱藏側邊圖 */
+    overflow: hidden;    
+
+    /* 隱藏關鍵字 */
+    text-indent: -9999px;
+
+    
+    
+}
+
+.header .logo a{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+
+    left: 0;
+    background-image: url(/pic/頭.png);
+    
+    /* 圖示大小 */
+    background-size: 55px 55px;
+
+    /* 往左實漸進 */
+    transition: left 0.2s;
+
+    
+}
+
+/* home圖示 */
+.header .logo .home{
+
+    /* 原本位置在logo左邊 */
+    left: -55px;
+    background-image: url(/pic/家.png);
+    
+}
+
+.header .logo:hover .home{
+    left: 0px;
+}
+
+
+
+.header .logo:hover .mi{
+    left: 55px;
+}
+
+
+
+
+/* 頭部中間表單//////////////// */
+.header .nav-wrapper{
+    float: left;
+    margin-left: 40px;
+
+}
+
+.header .nav{
+    width: 810px;
+    height: 100px;
+    line-height: 100px;
+    padding-left: 0px;
+    /* background-color: rgb(13, 0, 255); */
+    
+}
+
+
+
+.header .nav > li{
+    float: left;
+}
+
+
+.nav a{
+    font-size: 16px;
+    color: #000000;
+    
+    margin-right: 20px;
+    height: 100px;
+    display: block;
+
+    /* 清除a默認底線 */
+    text-decoration: none;
+}
+
+
+.nav a:hover{
+    color: #FF6700;
+ 
+}
+
+.nav .all-goods{
+    visibility: hidden;
+}
+
+
+.nav .goods-info{
+    
+    height: 0px ;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    
+    transition: height 0.3s;
+    z-index:  9999999;
+}
+
+
+/* .nav li:not(:first-of-type) :not(:nth-child(10)) :not(:last-of-type):hover ~ .goods-info, */
+.nav .show-goods:hover ~ .goods-info,
+.goods-info:hover{
+    display: block;
+    /* 後面1個用+號，如果是後代用~符號 */
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, .3);
+    height: 228px;
+}
+
+
+/* 頭部右側搜索單////////////// */
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    background-color: rgb(13, 8, 8);
+    float: right;
+    margin-top: 25px;
+    
+}
+
+.search-wrapper .search-inp{
+    box-sizing: border-box;
+    width: 244px;
+    border: none;
+    float: left;
+    padding: 0 10px;
+    height: 50px;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+    outline: none;
+    
+}
+
+
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + .search-btn{
+    border-color: #FF6700;
+    
+}
+
+
+.search-wrapper .search-btn{
+    height: 50px;
+    width: 52px;
+    padding: 0;
+    border: 0;
+    float: left;
+    background-color: #fff;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+    border-left: none;
+}
+
+.search-btn:hover{
+    background-color: #FF6700;
+    color: #fff;
+    border: none;
+}
+
+/* left-menu///////////////////// */
+
+
+.all-goods-wrapper{
+    position: relative;
+}
+
+.left-menu{
+    position: absolute;
+    width: 234px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 99;
+    left: -95px;
+    line-height: 1;
+    padding: 20px 0;
+}
+
+.left-menu  a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    margin-right: 0;
+    font-size: 14px;
+    padding: 0 30px;
+}
+
+
+.left-menu a i{
+    float: right;
+    line-height: 50px;
+}
+
+.left-menu a:hover{
+    color: #fff;
+    background-color: #FF6700;
+
+}
+
+
+/* banner//////////// */
+.banner-wrapper{
+    height: 460px;
+    width: 1226px;
+    position: relative;
+}
+
+.banner-back{
+    height: 460px;
+    position: relative;
+    background-color: #c0bfbf;
+}
+
+
+.back{
+    height: 460px;
+    width: 234px;
+    background: rgb(2, 78, 109);
+    float: left;
+    margin-right: 18px;
+}
+
+
+.banner{
+    height: 460px;
+    width: 974px;
+    
+    float: left;
+    
+}
+
+
+
+
+.banner li{
+    float: left;
+
+}
+
+.banner li:first-child{
+    margin-right: 54px;
+}
+
+.banner img{
+    height: 460px;
+    width: 460px;
+    float: left;
+}
+
+
+/* 點點/// */
+
+.pointer{
+    position: absolute;
+    bottom: 30px;
+    right: 22px;
+}
+
+
+.pointer a{
+    float: left;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(82, 78, 78, 0.4);
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    margin-left:5px;
+}
+
+.pointer a:hover{
+    background-color:rgba(0, 0, 0, 0.5);
+    border: 3px solid  rgba(255, 255, 255, 0.4);
+}
+
+/* 右邊工具條//////////////// */
+.back-top{
+    width: 26px;
+    height: 206px;
+    background-color: rgb(150, 150, 150);
+    position: fixed;
+
+    bottom: 100px;
+    right: 50%;
+    margin-right: -639px;
+}
+
+
+
+/* ad條  //////////////////////// */
+
+.ad{
+    height: 170px;
+   
+    margin-top: 14px;
+    
+}
+
+
+.ad .shortcut{
+    height: 170px;
+    width: 234px;
+    background-color: #5f5750;
+    margin-right: 18px;
+}
+
+.ad .shortcut a{
+    color: #cfccca;
+    display: block;
+    height: 84px;
+    width: 76px;
+    text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+
+.fa::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.fa1::after{
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 1px;
+    height: 50px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto 0;
+
+
+}
+
+
+
+
+
+
+.ad .shortcut a:hover{
+    color: #fff;
+}
+
+
+.ad .shortcut i{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.imgs img {
+    width: 170px;
+    height: 170px;
+    
+    
+}
+
+.imgs li{
+
+   margin-right: 31px;
+    
+} 
+
+.ad .imgs li:last-child{
+    margin: 0;
+}
+
+
+
+.ad .shortcut, 
+.imgs,
+.ad li{
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
